@@ -1,4 +1,4 @@
-package org.leonz2code.base1;
+package org.leonz2code.test1;
 
 import java.util.*;
 
@@ -27,6 +27,7 @@ int ctd = names_Male_esp.length;
 // SET CLASS
 Set<String> set = new HashSet<String>();
 TreeSet<String> sortedSet = new TreeSet<String>();
+LinkedHashSet<String> linkedset = new LinkedHashSet<String>();   
 
 // Set<String> unique = new HashSet<String>(); // replace with TreeSet to get them sorted
 
@@ -34,6 +35,7 @@ TreeSet<String> sortedSet = new TreeSet<String>();
 
 Queue<String> queueP = new PriorityQueue<String>();
 Queue<String> queueLL = new LinkedList<String>();
+Deque<String> de_que = new ArrayDeque<String>(); 
 
 // LIST CLASS
 ArrayList<String> myArrayList = new ArrayList<>();
@@ -50,8 +52,13 @@ Hashtable<String, Integer> balance = new Hashtable<String, Integer>();
 //HashSet
 // NOD-- Null , Ordered , Duplicate ( 1 , 0 , 0) OK 4
 
+//LinkedHashSet
+// NOD-- Null , Ordered , Duplicate ( 1 , 0 , 0) OK 4
+
 //TreeSet
 // NOD-- Null , Ordered , Duplicate ( 0 , 1 , 0) OK 2
+
+
 //=======================================================================================
 
 /* VERIFY QUEUE COLLECTION NOD */
@@ -59,15 +66,20 @@ Hashtable<String, Integer> balance = new Hashtable<String, Integer>();
 //PriorityQueue
 // NOD-- Null , Ordered , Duplicate ( 0 , 0 , 1) OK 1
 
+//ArrayDeque
+// NOD-- Null , Ordered , Duplicate ( 0 , 0 , 1) OK 1
+
 //LinkedList
 // NOD-- Null , Ordered , Duplicate ( 1 , 0 , 1) OK 5
 
 //=======================================================================================
 
-/* VERIFY ArrayList COLLECTION NOD */
+/* VERIFY List COLLECTION NOD */
 
 //ArrayList
 // NOD-- Null , Ordered , Duplicate ( 1 , 0 , 1) OK 5
+//LinkedList
+// vector [synchronized version of Arraylist]
 
 for (String s1 : names1) {
 
@@ -76,6 +88,9 @@ sortedSet.add(s1);
 queueP.add(s1);
 queueLL.add(s1);
 myArrayList.add(s1);
+linkedset.add(s1);
+
+de_que.add(s1);
 
 }
 
@@ -86,6 +101,9 @@ set.add(n1);
 //queueP.add(n1);
 queueLL.add(n1);
 myArrayList.add(n1);
+linkedset.add(n1);
+
+//de_que.add(n1);
 
 }
 
@@ -97,9 +115,14 @@ queueP.add(d1);
 queueLL.add(d1);
 myArrayList.add(d1);
 
+linkedset.add(d1);
+
+de_que.add(d1);
+
+
 }
 
-for (String cset : myArrayList) {
+for (String cset : de_que) {
 
 System.out.print(cset+",");
 
